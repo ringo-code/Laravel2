@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+
         
         <p class='edit'>[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
         <form action="/posts/{{ $post->id }}" id="form_delete" method="post">
@@ -17,10 +18,13 @@
             <p class='delete'>[<span onclick="return deletePost(this);">delete</span>]</p>
         </form>
         
+
+        <p class='edit'>[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+
         <div class='post'>
                 <h2 class='title'>{{ $post->title }}</h2>
                 <p class='body'>{{ $post->body }}</p>
-                <p class='body'>{{ $post->updated_at }}</p>
+                <p class='updated_at'>{{ $post->updated_at }}</p>
         </div>
         <div class='back'>[<a href='/'>back</a>]</div>
         
