@@ -8,6 +8,7 @@ use App\Http\Requests\PostRequest; // useする
 class PostController extends Controller
 {
     public function index(Post $post)
+
     {
         return view('index')->with(['posts' => $post->getPaginate()]);
     }
@@ -29,3 +30,14 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 }
+
+    {
+        return view('index')->with(['posts' => $post->getPaginateByLimit()]);
+    }
+
+    public function show(Post $post)
+    {
+       return view('show')->with(['post' => $post]);
+    }
+}
+?>
